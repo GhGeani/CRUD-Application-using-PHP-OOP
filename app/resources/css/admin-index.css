@@ -1,0 +1,126 @@
+
+html, body, .grid-container { height: 100%; margin: 0px; padding: 0px;}
+
+html, body{
+    background-image: linear-gradient(to right, white, lightyellow)
+}
+
+.manage-contacts, .create-contact, .create-info, .manage-infos, .create-article, .manage-articles, .create-service, .manage-services {
+    border: 1px solid grey;
+    margin: 5px;
+}
+
+.grid-container {
+  margin: 2px;
+  width: 100%;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "create-contact create-service create-info manage-infos manage-infos"
+  "manage-contacts manage-services create-info manage-infos manage-infos"
+  " create-article create-article manage-articles manage-articles manage-articles";
+}
+
+.grid-container div{
+    margin: auto 5px;;
+}
+
+.manage-infos { 
+    grid-area: manage-infos; 
+    height: 200px;
+
+}
+
+.manage-infos .table thead {
+    display: block;
+    width: 100%;
+    text-align: center;
+
+}
+
+.manage-infos .table thead tr{
+    display: block;
+    width: 100%;
+
+}
+.manage-infos .table thead td{
+    display: block;
+    width: auto;
+    margin: auto, auto;
+}
+
+.manage-infos .table tbody {
+    max-height: 205px;
+    overflow: auto;
+    text-align: center;
+    display: block;
+    width: 100%;
+
+}
+.manage-infos .table tbody td {
+}
+
+.manage-infos .table tbody .anunt {
+    display: inline-block;
+    max-height: 75px;
+    overflow: auto;
+    text-align: center;
+}
+
+.create-info { 
+    grid-area: create-info; 
+    max-height: auto;
+}
+
+.manage-articles { 
+    grid-area: manage-articles; 
+    height: 250px;
+}
+
+.create-article { 
+    grid-area: create-article; 
+    max-height: auto;
+}
+
+.create-contact {
+    grid-area: create-contact;
+    max-height: auto;
+}
+    
+.manage-contacts {
+    grid-area: manage-contacts;
+    height: 150px;
+}
+
+
+
+.create-service { 
+    grid-area: create-service; 
+    max-height: auto;
+}
+
+.manage-services { 
+    grid-area: manage-services; 
+    height: 200px;
+}
+
+@media screen and (max-width: 760px) {
+    .grid-container {
+        width: 100%;
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "create-info create-info create-service create-service" 
+        "create-info create-info create-contact create-contact" 
+        "create-article create-article create-article create-article"
+        "manage-infos manage-infos manage-services manage-services" 
+        "manage-articles manage-articles manage-articles manage-articles";
+      }
+
+      * {
+          font-size: 13px;
+      }
+}
